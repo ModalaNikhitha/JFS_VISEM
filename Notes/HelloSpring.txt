@@ -1,0 +1,110 @@
+What is Spring Framework?
+--------------------
+
+The Spring Framework is an open-source framework for building Java applications, especially enterprise-level applications.
+
+It provides:
+
+	✅ Dependency Injection (DI) – Reduces tight coupling between classes
+
+	✅ Inversion of Control (IoC) – Objects are created and managed by the container
+
+	✅ Aspect-Oriented Programming (AOP) – For logging, security, transactions
+
+	✅ Easy integration with databases, web apps, REST APIs, etc.
+
+Spring makes Java development:
+
+	Easier
+
+	More modular
+
+	More testable
+
+	Less boilerplate
+
+Core Concepts
+1️. IoC (Inversion of Control)
+
+	Instead of creating objects using new, Spring creates and manages them.
+
+2️. Dependency Injection
+
+	Spring injects required objects into a class automatically.
+
+Example:
+	Instead of:
+
+	Car car = new Car();
+
+	Spring creates the object and injects it where needed.
+
+🌱 Hello World using Spring (Core - XML Configuration)
+
+Step 1: Create Maven Project
+
+	Add dependency in pom.xml:
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>5.3.30</version>
+		</dependency>
+	</dependencies>
+
+Step 2: Create a Simple Class
+
+	package com.example;
+
+	public class HelloWorld {
+
+		public void sayHello() {
+			System.out.println("Hello World from Spring Framework!");
+		}
+	}
+
+Step 3: Create XML Configuration (applicationContext.xml)
+
+	Create file inside src/main/resources
+
+	<?xml version="1.0" encoding="UTF-8"?>
+	<beans xmlns="http://www.springframework.org/schema/beans"
+		   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		   xsi:schemaLocation="
+		   http://www.springframework.org/schema/beans
+		   http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+		<bean id="hello" class="com.example.HelloWorld"/>
+
+	</beans>
+Step 4: Main Class
+	package com.example;
+
+	import org.springframework.context.ApplicationContext;
+	import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+	public class App {
+		public static void main(String[] args) {
+
+			ApplicationContext context =
+					new ClassPathXmlApplicationContext("applicationContext.xml");
+
+			HelloWorld obj = (HelloWorld) context.getBean("hello");
+			obj.sayHello();
+		}
+	}
+✅ Output
+	Hello World from Spring Framework!
+	
+🌟 Modern Way (Using Spring Boot – Recommended)
+
+you should use Spring Boot because:
+
+	No XML configuration
+
+	Embedded server
+
+	Faster development
+
+	Production-ready features

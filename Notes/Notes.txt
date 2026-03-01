@@ -1,0 +1,34 @@
+18 th dec 2025
+
+**Maven Projects**
+mvn archetype:generate -DgroupId=com.skillnext1 -DartifactId=WebappDemo -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false
+
+###### ==> **DEVELOPING A SIMPLE WEB APPLICATION**
+
+1. Download and extract apache tomcat zip file.
+2. open cmd and type "mvn archetype:generate -DgroupId=com.skillnext1 -DartifactId=WebappDemo -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false"
+3.STRUCTURE:
+
+   WebappDemo
+   POM.XML
+ 	|
+ 	 -src
+ 	   |
+ 	    -main
+ 	       |
+ 	         -resources
+ 		  |
+ 		   -webapp
+ 			|
+ 			 -WEB-INF
+ 			 |	---web.xml
+ 			  -index.jsp
+
+4. cd WebappDemo
+5. mvn clean package
+6. copy ".varfile"
+7. go to apache tomcat folder and paste it in webapps folder
+8. go to bin folder and click on "startup.back file "
+9. go to web browser and type "localhost:8080/WebappDemo"
+10. if we want to stop the go to bin folder and click on "shutdown.back" file
+
